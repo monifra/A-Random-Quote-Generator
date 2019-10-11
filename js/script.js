@@ -88,16 +88,19 @@ const quotes = [
   }
 ];
 
-
-
 /***
   Create the `getRandomQuote` function to:
    - Create a variable to store a random number
    - Cse the random number to `return` a random quote object from the `quotes` array.
 ***/
 
+function getRandomQuote(){
+  let storeRandom = Math.floor(Math.random()*quotes.length); // generates a random number between 0 and 12 and stores it in storeRandom variable
+  let randomQuote =quotes[storeRandom]; // stores a random quote object from 'quotes' array
+  return randomQuote; // returns random quote
+}
 
-
+console.log(getRandomQuote());
 
 /***
   Create the `printQuote` function to:
@@ -112,7 +115,11 @@ const quotes = [
    - Set the `innerHTML` of the `quote-box` div to the HTML string.
 ***/
 
+function printQuote{
+  let storeQuote = getRandomQuote();
+  
 
+}
 
 
 /***
