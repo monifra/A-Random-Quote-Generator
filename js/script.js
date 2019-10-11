@@ -82,7 +82,7 @@ const quotes = [
     movement:"Modern"
   },
   {
-    quote:"Art should be created for life, not for the museum",
+    quote:"Art should be created for life, not for the museum.",
     source:"Jean Nouvel",
     movement:"Modern"
   }
@@ -100,7 +100,7 @@ function getRandomQuote(){
   return randomQuote; // returns random quote
 }
 
-console.log(getRandomQuote());
+// console.log(getRandomQuote());
 
 /***
   Create the `printQuote` function to:
@@ -115,12 +115,25 @@ console.log(getRandomQuote());
    - Set the `innerHTML` of the `quote-box` div to the HTML string.
 ***/
 
-function printQuote{
-  let storeQuote = getRandomQuote();
-  
-
+function printQuote(){
+  let storeQuote = getRandomQuote(); // variable storeQuote stores random quote from getRandomQuote() function
+  let buildString = ""; // create a variable with an empty string
+  buildString += "<p class='quote'>";
+  buildString += storeQuote.quote + "</p>";
+  buildString += "<p class='surce'>" + storeQuote.source;
+  if (storeQuote.citation != "undefined"){
+    buildString += "<span class='citation'>" + storeQuote.citation + "</span>";
+  }
+  if (storeQuote.year != "undefined"){
+    buildString += "<span class='year'>" + storeQuote.year + "</span>";
+  }
+  buildString += "</p>";
+  return buildString;
 }
 
+// console.log(printQuote());
+
+document.getElementById('quote-box').innerHTML = printQuote();
 
 /***
   When the "Show another quote" button is clicked, the event listener
